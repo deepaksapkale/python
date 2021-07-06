@@ -1,0 +1,8 @@
+import pandas as pnifty
+nifty = pnifty.read_csv('data/qnifty.csv')
+Close = nifty.Close
+
+returns = Close.pct_change()
+returns.plot.bar()
+rm =returns.mean()
+((1 + rm)**12-1)*100
